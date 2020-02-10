@@ -63,6 +63,6 @@ for (i in 1:filelength) { #for loop to read in a folder with data and create a c
 #the below line will create excel file of all of your data from the dataframe you created above, follow commented line below for further instructions...
 #if you want to change the name of you new excel file: write.csv(dataf, "C:/...\\file-name-goes-here.csv", row.names=FALSE), then uncomment the below line
 
-#write.csv(dataf,"Data\\HW4IzzyGaw.csv", row.names=FALSE) 
+#write.csv(dataf,"C:/Users/izzyg/Documents/rbootclass/homework-4-izzygaw\\HW4IzzyGaw.csv", row.names=FALSE) 
 
 #Run the whole code at once for an excellent coding experience!
