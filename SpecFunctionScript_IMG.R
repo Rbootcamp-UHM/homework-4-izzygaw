@@ -36,10 +36,13 @@ plot.spec <- function (X) {
 filelength <- length(myfiles) #38 files total
 
 #created an empty data frame to store data in later
-dataf <- data.frame(matrix(data=NA, nrow = filelength, ncol = 3))
+dataf <- data.frame(matrix(data=NA, nrow = filelength, ncol = 4, dimnames = list(c(1:38))))
 
 #create column labels
-columnnheadings <- c("File", "Maximum Intensity", "Lambda") 
+columnnheadings <- c("","File","Lambda","Maximum Intensity") 
+
+#adding file numbers
+fileN <- cbind(data.frame = c(1:38))
 
 #add each label to our empty data frame
 names(dataf) <- columnnheadings
@@ -56,7 +59,8 @@ for (i in 1:filelength) { #for loop to read in a folder with data and create a c
           ncol = 2, cex = 1, text.col = "blue", title="Maximum Intensity")
 		legend("bottomright", legend = l, col = "red",
           ncol = 2, cex = 1, text.col = "red", title="Lambda at Maximum Intensity")  #creates a legend for lambda at maximum intensity
-	dataf[i,] <- c(myfiles[i], max.int, l) #adds data to dataf
+	dataf[i,] <- c(fileN[i], myfiles[i], l, max.int)	#adds all the data to the data frame
+	
 }
 	dev.off() #turns off pdf creator
 	
